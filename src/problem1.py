@@ -15,6 +15,7 @@ def main():
     run_test_init()
     run_test_go_to_floor()
     run_test_get_passengers()
+    run_test_passengers_leave()
 
 
 ###############################################################################
@@ -154,13 +155,36 @@ class Elevator(object):
 
 
 # ---------------------------------------------------------------------
-#     TODO: 7. Write methods, AS NEEDED, to allow passengers to exit
+#     DONE: 7. Write methods, AS NEEDED, to allow passengers to exit
 #      the elevator.  Show that your solution works with a test case. (2 pts)
 #     Write the testing code (below) before writing this function.
 # ---------------------------------------------------------------------
 # ---------------------------------------------------------------------
 
-    
+    def passengers_leave(self,num_passengers):
+        if self.capacity < num_passengers:
+            self.total = self.capacity - num_passengers
+        return self.total
+
+    #if the number of new passengers that want to get on exceed the capacity, then that many passengers
+    #will get off to let the new ones on so that the number leaving is equivalent to the number entering
+    #and the elevator does not exceed capacity
+
+
+def run_test_passengers_leave():
+    print('---------------------------------------------------------')
+    print("Testing the passengers_leave method of the Elevator class")
+    print("---------------------------------------------------------")
+    #Test 1:
+    e1 = Elevator(20,18)
+    expected_capacity = 20
+    expected_num_passengers = 17
+    print("Expected:", expected_capacity,expected_num_passengers)
+    print("Actual:", e1.passengers_leave(3))
+
+
+
+
 
 ###############################################################################
 # The TEST functions for the  Elevator  class begin here.
