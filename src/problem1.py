@@ -1,8 +1,8 @@
 """
 Exam 1, problem 1. 15 Points
-Authors: Every CSSE faculty member, Dr. Brackin, and PUT YOUR NAME HERE.
+Authors: Every CSSE faculty member, Dr. Brackin, and Carla Archuleta.
 """
-# TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+# DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -12,8 +12,8 @@ def main():
     # UN-comment tests as you work the problems.
     ###########################################################################
 
-    #run_test_init()
-    #run_test_go_to_floor()
+    run_test_init()
+    run_test_go_to_floor()
     #run_test_get_passengers()
 
 
@@ -58,11 +58,12 @@ class Elevator(object):
           :type num_floors: int
         """
         # ---------------------------------------------------------------------
-        #     TODO: 2. Implement and test this function. (3 pts)
+        #     DONE: 2. Implement and test this function. (3 pts)
         #     See the testing code (below) for more examples.
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
-
+        self.capacity = capacity
+        self.num_floors = num_floors
 
     def go_to_floor(self,floor):
         """
@@ -93,10 +94,20 @@ class Elevator(object):
           #   False is returned by the method
         """
         # ---------------------------------------------------------------------
-        #     TODO: 4. Implement the go_to_floor method. (3 pts)
+        #     DONE: 4. Implement the go_to_floor method. (3 pts)
         #     Write the testing code (below) before writing this method.
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
+        if self.num_floors >= floor:
+            self.num_floors = floor
+            return True
+        if self.num_floors < floor:
+            return False
+
+
+
+
+
 
 
     def get_passengers(self,num_passengers):
@@ -174,7 +185,7 @@ def run_test_go_to_floor():
     print('-----------------------------------------------------------')
     print('Testing the   go_to_floor   method of the Elevator class.')
     print('-----------------------------------------------------------')
-    #     TODO: 3. Write tests for the go_to_floor method. (2 pts)
+    #     DONE: 3. Write tests for the go_to_floor method. (2 pts)
     #     A recommended format is shown below.  Be sure to
     #     add your actual code where indicated.  Include two
     #     test cases - one that works and one that returns False
@@ -188,12 +199,33 @@ def run_test_go_to_floor():
     expected_go_to_floor = 4
     print('Expected: go_to_floor returns :', True)
     print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
+    print("Actual:", e1.capacity, e1.num_floors, e1.go_to_floor(4))
     ################################################################
     #
     #     Add your values for actual below here
     #
     ################################################################
     print()
+    #Test 2: sends elevator to 7th floor
+    e2 = Elevator(15, 10)
+    expected_capacity = 15
+    expected_num_floors = 10
+    expected_go_to_floor = 7
+    print('Expected: go_to_floor returns :', True)
+    print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
+    print("Actual:",e2.capacity, e2.num_floors, e2.go_to_floor(7))
+
+    print()
+    #Test 3:
+    e3 = Elevator(10, 12)
+    expected_capacity = 10
+    expected_num_floors = 12
+    expected_go_to_floor = 16
+    print('Expected: go_to_floor returns :', False)
+    print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
+    print("Actual:", e3.capacity, e3.num_floors, e3.go_to_floor(16))
+
+
 
 
 def run_test_get_passengers():
