@@ -186,6 +186,7 @@ def problem3(string_of_characters):
         if string_of_characters[k] is str:
             num = num +1
             return num
+
     reverse = ''
     for k in range(len(string_of_characters)-1,-1,-1):
         reverse = reverse + string_of_characters[k]
