@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../14-WaitUntilEvent_WhileLoops" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../18-LoopsWithinLoops" vcs="Git" />
   </component>
 </project>
