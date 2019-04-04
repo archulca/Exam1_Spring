@@ -244,6 +244,7 @@ def run_test_go_to_floor():
     print('Expected: go_to_floor returns :', True)
     print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
     print("Actual:",e2.go_to_floor(7))
+    print(e2.capacity,e2.num_floors)
 
     print()
     #Test 3:

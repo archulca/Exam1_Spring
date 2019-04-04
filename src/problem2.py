@@ -178,6 +178,7 @@ def problem3(string_of_characters):
     # provided method reverseString(string),you will get 20 points
     count = 0
     num = 0
+    print(string_of_characters)
     print(len(string_of_characters))
     for k in range(len(string_of_characters)):
         if string_of_characters[k] is int:
@@ -190,7 +191,7 @@ def problem3(string_of_characters):
     reverse = ''
     for k in range(len(string_of_characters)-1,-1,-1):
         reverse = reverse + string_of_characters[k]
-        print(reverse)
+    print(reverse)
         #could not figure out how to only print the last line
 
 
